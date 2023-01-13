@@ -34,7 +34,7 @@ public class PessoaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	private Pessoa salvar(Pessoa pessoa) {
+	private Pessoa salvar(@RequestBody Pessoa pessoa) {
 		return pessoaService.salvar(pessoa);
 	}
 	
@@ -68,6 +68,7 @@ public class PessoaController {
 		pessoaService.buscar(id)
 				.map(pessoaBase ->{
 					modelMapper.map(pessoa, pessoaBase);
+					pessoaService.salvar(pessoaBase);
 					return Void.TYPE;
 				}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado!"));
 		
