@@ -1,35 +1,33 @@
 package com.attornatus.api.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Data
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "pessoas")
 public class Pessoa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	private String nome;		
-	private Date dt_nasc;	
-	private String endereco;	
+	private LocalDate dt_nasc;
+	@OneToOne
+    @JoinColumn(name = "endereco_id", referencedColumnName = "endereco_id")
+    private Endereco endereco; 	
+	
+	public Pessoa() {}
 	
 }
-/*
- * [
-    "nome": "igor"
-    "dt_nasc": "1977-03-15"
-    "endereco": "rua"
-    "cep": "86604634"
-    "num_casa": "58"
-    "cidade": "Rolandia"
-]
- */
+

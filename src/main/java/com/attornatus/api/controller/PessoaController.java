@@ -36,7 +36,7 @@ public class PessoaController {
 	@ResponseStatus(HttpStatus.CREATED)
 	private Pessoa salvar(@RequestBody Pessoa pessoa) {
 		return pessoaService.salvar(pessoa);
-	}
+	}	
 	
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
