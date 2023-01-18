@@ -4,15 +4,8 @@
     Desafio Dev Back-End JR Attornatus
 </h1>
 <h2>
-  📦 API para gerenciar pessoas.
+  📦 API para gerenciar pessoas
 </h2>
-
-# Índice
-
-- [Sobre](#-sobre)
-- [Funcionalidaes](#-tecnologias-utilizadas)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como baixar e executar o projeto](#-como-baixar-e-executar-o-projeto)
 
 # 📝Sobre
 
@@ -52,7 +45,7 @@ $ git clone https://github.com/IgorZorzela/attornatus-api
 
 ---
 
-Com a aplicação rodando voce este Link: http://localhost:8080/pessoas
+Com a aplicação rodando voce este Link: http://localhost:8080/pessoas (recomendo usar o Postman para enviar as requisições)
 
 🔥Desenvolvido por Igor Zorzela
 Footer
